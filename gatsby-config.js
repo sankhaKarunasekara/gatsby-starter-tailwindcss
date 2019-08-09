@@ -5,6 +5,13 @@ module.exports = {
     author: `@luke_bennett_`,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-transformer-sharp`,
     // {
     //   resolve: `gatsby-plugin-canonical-urls`,
     //   options: {
@@ -37,12 +44,5 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-postcss`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-transformer-sharp`,
   ],
 }
