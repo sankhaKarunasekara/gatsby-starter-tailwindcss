@@ -3,6 +3,7 @@ module.exports = {
     title: `Gatsby Starter Tailwind`,
     description: `Gatsby starter styled with Tailwind.`,
     author: `@luke_bennett_`,
+    siteUrl: `https://gatsby-starter-tailwindcss.netlify.com`,
   },
   plugins: [
     `gatsby-plugin-netlify`,
