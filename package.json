@@ -6,25 +6,25 @@
   "author": "Luke Bennett <hello@lukebennett.com.au>",
   "dependencies": {
     "autoprefixer": "^9.6.1",
-    "gatsby": "^2.13.55",
+    "gatsby": "^2.13.82",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-canonical-urls": "^2.1.5",
-    "gatsby-plugin-manifest": "^2.2.5",
+    "gatsby-plugin-manifest": "^2.2.9",
     "gatsby-plugin-netlify": "^2.1.10",
     "gatsby-plugin-postcss": "^2.1.2",
     "gatsby-plugin-purgecss": "^4.0.0",
-    "gatsby-plugin-react-helmet": "^3.1.3",
+    "gatsby-plugin-react-helmet": "^3.1.5",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.2.10",
     "gatsby-plugin-sitemap": "^2.2.6",
-    "gatsby-source-filesystem": "^2.1.18",
+    "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-sharp": "^2.2.6",
     "postcss-import": "^12.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
-    "tailwindcss": "^1.1.0"
+    "tailwindcss": "^1.1.2"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
