@@ -31,7 +31,12 @@ const Layout = ({ children }) => {
       <footer className="mx-auto max-w-4xl p-4 w-full">
         © {new Date().getFullYear()}, Built with
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <a
+          href="https://www.gatsbyjs.org"
+          className="font-semibold hover:text-teal-600"
+        >
+          Gatsby
+        </a>
       </footer>
     </div>
   );
