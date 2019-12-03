@@ -6,22 +6,22 @@ import PropTypes from 'prop-types';
 const Header = ({ siteTitle }) => {
   const [isOpen, toggleOpen] = useState(false);
   return (
-    <header className="bg-teal-600 mb-6 text-white w-screen">
-      <div className="flex items-center justify-between mx-auto max-w-4xl px-4 py-6">
-        <h1 className="font-bold text-4xl">
+    <header className="w-screen mb-6 text-white bg-teal-600">
+      <div className="flex items-center justify-between max-w-4xl px-4 py-6 mx-auto">
+        <h1 className="text-4xl font-bold">
           <Link to="/">{siteTitle}</Link>
         </h1>
         <button
           onClick={() => toggleOpen(!isOpen)}
           type="button"
-          className="border border-white font-semibold inline-block leading-none px-3 py-2 relative text-sm tracking-wide uppercase z-50"
+          className="relative z-50 inline-block px-3 py-2 text-sm font-semibold leading-none tracking-wide uppercase border border-white"
         >
           Menu
         </button>
         <ReactModal
           isOpen={isOpen}
           contentLabel="Site navigation"
-          className="bg-teal-600 flex inset-0 items-center justify-center h-full text-white text-3xl"
+          className="inset-0 flex items-center justify-center h-full text-3xl text-white bg-teal-600"
         >
           <nav>
             <ul>

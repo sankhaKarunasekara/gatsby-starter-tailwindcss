@@ -23,14 +23,13 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div className="antialiased flex flex-col min-h-screen text-gray-600">
+    <div className="flex flex-col min-h-screen font-sans antialiased text-gray-600">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main id="main" className="flex-1 mx-auto max-w-4xl px-4 pb-6 w-full">
+      <main id="main" className="flex-1 w-full max-w-4xl px-4 pb-6 mx-auto">
         {children}
       </main>
-      <footer className="mx-auto max-w-4xl p-4 w-full">
-        © {new Date().getFullYear()}, Built with
-        {` `}
+      <footer className="w-full max-w-4xl p-4 mx-auto">
+        © {new Date().getFullYear()}, Built with{' '}
         <a
           href="https://www.gatsbyjs.org"
           className="font-semibold hover:text-teal-600"
