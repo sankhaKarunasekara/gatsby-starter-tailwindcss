@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-require('./src/css/tailwind.css');
-
 // Self host fonts using Typefaces.js https://github.com/KyleAMathews/typefaces
+import 'typeface-inter';
+
+// Load CSS
+import './src/css/tailwind.css';
