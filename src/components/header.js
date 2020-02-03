@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import ReactModal from 'react-modal';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 
 import useGraphql from '../hooks/use-graphql';
 
 const Header = () => {
-  const [isOpen, toggleOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   const { site } = useGraphql();
   return (
     <header className="w-screen mb-6 text-white bg-teal-600">
@@ -14,44 +13,26 @@ const Header = () => {
           <Link to="/">{site.siteMetadata.title}</Link>
         </h1>
         <button
-          onClick={() => toggleOpen(!isOpen)}
+          onClick={() => setOpen(!isOpen)}
           type="button"
           className="relative z-50 inline-block px-3 py-2 text-sm font-semibold leading-none tracking-wide uppercase border border-white"
         >
           Menu
         </button>
-        <ReactModal
-          isOpen={isOpen}
-          contentLabel="Site navigation"
-          className="inset-0 flex items-center justify-center h-full text-3xl text-white bg-teal-600"
-        >
-          <nav>
+        {isOpen && (
+          <nav className="fixed inset-0 z-40 flex items-center justify-center h-full text-3xl font-bold text-white bg-teal-600">
             <ul>
               <li>
-                <button
-                  onClick={() => {
-                    toggleOpen(false);
-                    navigate('/');
-                  }}
-                  type="button"
-                >
+                <Link to="/" onClick={() => setOpen(false)}>
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    toggleOpen(false);
-                    navigate('/page-2');
-                  }}
-                  type="button"
-                >
-                  Page 2
-                </button>
+                <Link to="/page-2">Page 2</Link>
               </li>
             </ul>
           </nav>
-        </ReactModal>
+        )}
       </div>
     </header>
   );
