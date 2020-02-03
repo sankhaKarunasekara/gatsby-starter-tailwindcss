@@ -12,9 +12,11 @@ const useGraphql = () => {
   const data = useStaticQuery(
     graphql`
       {
-        site {
-          siteMetadata {
-            title
+        allSiteNavigationJson {
+          nodes {
+            href
+            id
+            label
           }
         }
         placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
@@ -22,6 +24,11 @@ const useGraphql = () => {
             fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
             }
+          }
+        }
+        site {
+          siteMetadata {
+            title
           }
         }
       }

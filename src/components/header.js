@@ -5,7 +5,7 @@ import useGraphql from '../hooks/use-graphql';
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
-  const { site } = useGraphql();
+  const { allSiteNavigationJson, site } = useGraphql();
   return (
     <header className="w-screen mb-6 text-white bg-teal-600">
       <div className="flex items-center justify-between max-w-4xl px-4 py-6 mx-auto">
@@ -22,14 +22,13 @@ const Header = () => {
         {isOpen && (
           <nav className="fixed inset-0 z-40 flex items-center justify-center h-full text-3xl font-bold text-white bg-teal-600">
             <ul>
-              <li>
-                <Link to="/" onClick={() => setOpen(false)}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/page-2">Page 2</Link>
-              </li>
+              {allSiteNavigationJson.nodes.map(node => (
+                <li key={node.id}>
+                  <Link to={node.href} onClick={() => setOpen(false)}>
+                    {node.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         )}

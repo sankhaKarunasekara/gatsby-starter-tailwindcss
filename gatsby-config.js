@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     // {
     //   resolve: `gatsby-plugin-canonical-urls`,
@@ -36,6 +37,13 @@ module.exports = {
       options: {
         tailwind: true,
         purgeOnly: [`src/css/tailwind.css`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data`,
       },
     },
     {
