@@ -7,9 +7,9 @@ const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const { allSiteNavigationJson, site } = useGraphql();
   return (
-    <header className="w-screen mb-6 text-white bg-teal-600">
+    <header className="sticky top-0 w-screen mb-6 text-white bg-teal-600 shadow-md">
       <div className="flex items-center justify-between max-w-4xl px-4 py-6 mx-auto">
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-4xl font-bold leading-none">
           <Link to="/">{site.siteMetadata.title}</Link>
         </h1>
         <button
