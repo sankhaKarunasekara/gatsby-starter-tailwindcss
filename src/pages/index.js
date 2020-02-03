@@ -14,7 +14,7 @@ const IndexPage = () => (
     <div className="max-w-xs mb-6">
       <PlaceholderImage />
     </div>
-    <Link to="/page-2/" className="highlight">
+    <Link to="/contact" className="highlight">
       Go to page 2
     </Link>
   </Layout>
