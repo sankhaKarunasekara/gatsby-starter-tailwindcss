@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
+import PlaceholderImage from '../components/image';
 import SEO from '../components/seo';
 
 const IndexPage = () => (
@@ -12,7 +12,7 @@ const IndexPage = () => (
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <div className="max-w-xs mb-6">
-      <Image />
+      <PlaceholderImage />
     </div>
     <Link to="/page-2/" className="highlight">
       Go to page 2

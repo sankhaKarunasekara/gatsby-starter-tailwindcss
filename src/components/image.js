@@ -14,10 +14,10 @@ import useGraphql from '../hooks/use-graphql';
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const PlaceholderImage = () => {
   const { placeholderImage } = useGraphql();
 
   return <Image fluid={placeholderImage.childImageSharp.fluid} />;
 };
 
-export default Image;
+export default PlaceholderImage;
