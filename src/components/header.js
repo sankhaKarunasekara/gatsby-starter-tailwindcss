@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 import { Link, navigate } from 'gatsby';
-import PropTypes from 'prop-types';
 
-const Header = ({ siteTitle }) => {
+import useGraphql from '../hooks/use-graphql';
+
+const Header = () => {
   const [isOpen, toggleOpen] = useState(false);
+  const { site } = useGraphql();
   return (
     <header className="w-screen mb-6 text-white bg-teal-600">
       <div className="flex items-center justify-between max-w-4xl px-4 py-6 mx-auto">
         <h1 className="text-4xl font-bold">
-          <Link to="/">{siteTitle}</Link>
+          <Link to="/">{site.siteMetadata.title}</Link>
         </h1>
         <button
           onClick={() => toggleOpen(!isOpen)}
@@ -53,14 +55,6 @@ const Header = ({ siteTitle }) => {
       </div>
     </header>
   );
-};
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Header;
