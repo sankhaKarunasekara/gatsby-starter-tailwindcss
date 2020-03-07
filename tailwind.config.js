@@ -1,13 +1,18 @@
-const tw = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme');
+const tailwindUI = require('@tailwindcss/ui');
 
 module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...tw.fontFamily.sans],
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  variants: {},
-  plugins: [],
+  variants: { margin: ['responsive', 'first'] },
+  plugins: [
+    tailwindUI({
+      layout: 'sidebar',
+    }),
+  ],
 };

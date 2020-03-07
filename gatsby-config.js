@@ -1,3 +1,8 @@
+const postCssImport = require('postcss-import');
+const tailwind = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Tailwind`,
@@ -7,7 +12,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sharp`,
@@ -33,9 +37,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          postCssImport,
+          tailwind(`./tailwind.config.js`),
+          autoprefixer,
+          cssnano,
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        tailwind: true,
+        extractors: [/[\w-/.:]+(?<!:)/g],
         purgeOnly: [`src/css/tailwind.css`],
       },
     },
