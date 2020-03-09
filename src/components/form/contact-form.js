@@ -11,15 +11,12 @@ function encode(data) {
 }
 
 const ContactForm = () => {
-  const name = 'Name';
-  const email = 'Email Address';
-  const tel = 'Contact Number';
-  const message = 'Message';
   const [state, setState] = React.useState({
-    [name]: '',
-    [email]: '',
-    [tel]: '',
-    [message]: '',
+    first_name: '',
+    last_name: '',
+    email_address: '',
+    phone_number: '',
+    message: '',
   });
 
   const handleChange = e =>
@@ -47,43 +44,77 @@ const ContactForm = () => {
       method="POST"
       name="contact-form"
       onSubmit={handleSubmit}
-      className="max-w-xl mx-auto mt-12"
     >
-      <Input
-        name={name}
-        value={state[name]}
-        required
-        autoComplete="name"
-        handleChange={handleChange}
-      />
-      <Input
-        name={email}
-        value={state[email]}
-        required
-        autoComplete="email"
-        handleChange={handleChange}
-      />
-      <Input
-        name={tel}
-        value={state[tel]}
-        required
-        autoComplete="tel"
-        handleChange={handleChange}
-      />
-      <TextArea
-        name={message}
-        value={state[message]}
-        required
-        handleChange={handleChange}
-      />
-      <p className="flex">
-        <button
-          type="submit"
-          className="px-4 py-2 mt-3 ml-auto text-sm font-bold text-white uppercase bg-teal-600"
-        >
-          Submit
-        </button>
-      </p>
+      <div className="bg-gray-100">
+        <div className="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="px-4 py-5 mt-6 bg-white shadow sm:rounded-lg sm:p-6">
+            <div className="md:grid md:grid-cols-3 md:gap-6">
+              <div className="md:col-span-1">
+                <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  Contact form
+                </h3>
+                <p className="mt-1 text-sm leading-5 text-gray-500">
+                  Please fill in the contact form and we will get back to you
+                  shortly.
+                </p>
+              </div>
+              <div className="mt-5 md:mt-0 md:col-span-2">
+                <div className="grid grid-cols-6 gap-6">
+                  <div className="col-span-6 sm:col-span-4 md:col-span-3">
+                    <Input
+                      label="First name"
+                      name="first_name"
+                      value={state.first_name}
+                      required
+                      handleChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="col-span-6 sm:col-span-4 md:col-span-3">
+                    <Input
+                      label="Last name"
+                      name="last_name"
+                      value={state.last_name}
+                      required
+                      handleChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="col-span-6 sm:col-span-4 md:col-span-3">
+                    <Input
+                      label="Phone number"
+                      name="phone_number"
+                      value={state.phone_number}
+                      required
+                      handleChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="col-span-6 sm:col-span-4 md:col-span-3">
+                    <Input
+                      label="Email address"
+                      name="email_address"
+                      value={state.email_address}
+                      required
+                      handleChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="col-span-4 md:col-span-6">
+                    <TextArea
+                      label="Message"
+                      name="message"
+                      value={state.message}
+                      required
+                      handleChange={handleChange}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
   );
 };
